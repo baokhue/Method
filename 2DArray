@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class SumofMainDiagonal {
+    public static int sumofMainDiagonal (int[][] arr) {
+        int sumMainDiagonal = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sumMainDiagonal += arr[i][i];
+        }
+        return sumMainDiagonal;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Input lines: ");
+        int lineNumber = sc.nextInt();
+        System.out.println("Input columns: ");
+        int someColumns = sc.nextInt();
+        int[][] number2D = new int[lineNumber][someColumns];
+
+        for (int i = 0; i < lineNumber; i++) {
+            System.out.println("Line " + (i + 1));
+            for (int j = 0; j < someColumns; j++) {
+                System.out.println("Input line: " + (i + 1) + "Att the index: " + (j + 1));
+                number2D[i][j] = sc.nextInt();
+            }
+        }
+        System.out.println(sumofMainDiagonal(number2D));
+    }
+}
